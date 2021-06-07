@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace POO_Parcial1_Ej1
 {
@@ -7,7 +6,28 @@ namespace POO_Parcial1_Ej1
     {
         public int Numero { get; set; }
         public string Nombre { get; set; }
+
+        #region Constructor/Destructor
+
+        public Capitulos()
+        { 
         
+        }
+
+        public Capitulos(int num, string nom)
+        {
+            Numero = num;
+            Nombre = nom;
+        }
+
+        ~Capitulos()
+        {
+            Nombre = "";
+            Numero = 0;
+        }
+
+        #endregion
+
         public Capitulos BuscaCapítulo(List<Capitulos> list, string nombreCapitulo) //Devuelve el capítulo buscado;
         {
             foreach (var capitulo in list)
