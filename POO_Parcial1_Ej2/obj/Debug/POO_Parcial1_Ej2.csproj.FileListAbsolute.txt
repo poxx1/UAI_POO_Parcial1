@@ -7,3 +7,4 @@ C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej2\obj\Debug\POO_Parci
 C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej2\obj\Debug\POO_Parcial1_Ej2.csproj.CoreCompileInputs.cache
 C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej2\obj\Debug\POO_Parcial1_Ej2.exe
 C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej2\obj\Debug\POO_Parcial1_Ej2.pdb
+C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej2\obj\Debug\POO_Parcial1_Ej2.Form1.resources
