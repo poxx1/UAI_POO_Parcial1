@@ -16,26 +16,28 @@ namespace POO_Parcial1_Ej2
 
         Clase VENDEDOR 
         Propiedades:
-        NOMBRE (Clase Nombre)
-        ZONADEVENTA
-        TOTALVENDIDO 
-        COMISIÓN  
+        ++ NOMBRE (Clase Nombre)
+        ++ ZONADEVENTA
+        ++ TOTALVENDIDO 
+        ++ COMISIÓN  
 
         Métodos:
         BuscaVendedor() Devuelve el Vendedor buscado con todos sus datos
         CálculaComisión() Ojo los parámetros
-        CONSTRUCTOR SOBRECARGADO
-        DESTRUCTOR
+        ++ CONSTRUCTOR SOBRECARGADO
+        ++ DESTRUCTOR
 
         Clase NOMBRE
         Propiedades:
-        APELLIDO
-        PRIMERNOMBRE
-        SEGUNDONOMBRE
+        ++ APELLIDO
+        ++ PRIMERNOMBRE
+        ++ SEGUNDONOMBRE
 
         Métodos:
-        CONSTRUCTOR SOBRECARGADO
-        DESTRUCTOR
+        ++ CONSTRUCTOR SOBRECARGADO
+        ++ DESTRUCTOR
+
+        >> Aunque no diga de la clase venta, diria que tengo que crearla si o si. ~~ Pregunta pal profe
 
         Detalle de cálculo de Comisión:
         Si totalVendido < $ 50.000 , la comisión es cero. 
