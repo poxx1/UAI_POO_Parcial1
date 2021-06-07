@@ -16,5 +16,10 @@ namespace POO_Parcial1_Ej2
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
