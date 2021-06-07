@@ -12,6 +12,10 @@ namespace POO_Parcial1_Ej2
         public string PrimerNombre { get; set; }
         public string SegundoNombre { get; set; }
 
+        public Nombre()
+        { 
+        
+        }
         ~Nombre()
         {
             Apellido = "";
@@ -19,7 +23,7 @@ namespace POO_Parcial1_Ej2
             SegundoNombre = "";
         }
 
-        Nombre(string _Apellido, string _PrimerNombre, string _SegundoNombre)
+        public Nombre(string _Apellido, string _PrimerNombre, string _SegundoNombre)
         {
             Apellido = _Apellido;
             PrimerNombre = _PrimerNombre;
