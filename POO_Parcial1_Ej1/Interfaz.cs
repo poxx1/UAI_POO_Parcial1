@@ -24,11 +24,18 @@ namespace POO_Parcial1_Ej1
 
         #endregion
 
+        #region Metodos de la interfaz
         public Interfaz()
         {
             InitializeComponent();
         }
+        private void Interfaz_Load(object sender, EventArgs e)
+        {
+            textBox7.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        }
+        #endregion
 
+        #region Metodos creados
         private void button1_Click(object sender, EventArgs e)
         {
             libro = new Libro();
@@ -40,6 +47,8 @@ namespace POO_Parcial1_Ej1
 
             listaLibros.Add(libro);
 
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listaLibros;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -55,12 +64,10 @@ namespace POO_Parcial1_Ej1
             comboBox1.DataSource = listaCapitulos;
             comboBox1.DisplayMember = "Nombre";
 
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = listaCapitulos;
         }
 
-        private void Interfaz_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -90,6 +97,36 @@ namespace POO_Parcial1_Ej1
                 sw.Write(richTextBox1.Text);
                 sw.Close();
             }
+        }
+        #endregion
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string nombreCapitulo = textBox5.Text;
+
+            capitulo = capitulo.BuscaCapítulo(listaCapitulos, nombreCapitulo);
+            if (capitulo != null)
+                MessageBox.Show("Se encontro el capitulo deseado", "Sistema Bibliotecario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("No se encontro el capitulo", "Sistema Bibliotecario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string nombreCapitulo = textBox5.Text;
+
+            listaCapitulos = capitulo.EliminaCapítulo(listaCapitulos, nombreCapitulo);
+            if (listaCapitulos != null)
+                MessageBox.Show("Se elimino el capitulo deseado", "Sistema Bibliotecario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("No se encontro el capitulo", "Sistema Bibliotecario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            dataGridView2.DataSource = null;
+            dataGridView2.DataSource = listaCapitulos;
+
+            comboBox1.DataSource = null;
+            comboBox1.DataSource = listaCapitulos;
+            comboBox1.DisplayMember = "Nombre";
         }
     }
 }
