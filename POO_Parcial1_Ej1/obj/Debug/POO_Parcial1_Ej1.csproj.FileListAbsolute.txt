@@ -1,9 +1,0 @@
-C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej1\bin\Debug\POO_Parcial1_Ej1.exe.config
-C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej1\bin\Debug\POO_Parcial1_Ej1.exe
-C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej1\bin\Debug\POO_Parcial1_Ej1.pdb
-C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej1\obj\Debug\POO_Parcial1_Ej1.Interfaz.resources
-C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej1\obj\Debug\POO_Parcial1_Ej1.Properties.Resources.resources
-C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej1\obj\Debug\POO_Parcial1_Ej1.csproj.GenerateResource.cache
-C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej1\obj\Debug\POO_Parcial1_Ej1.csproj.CoreCompileInputs.cache
-C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej1\obj\Debug\POO_Parcial1_Ej1.exe
-C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej1\obj\Debug\POO_Parcial1_Ej1.pdb

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace POO_Parcial1_Ej2
+﻿namespace POO_Parcial1_Ej2
 {
     public class Vendedor//:Nombre // Uso herencia, o uso el type Nombre?
     {
