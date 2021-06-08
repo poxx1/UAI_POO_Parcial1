@@ -50,18 +50,20 @@ namespace POO_Parcial1_Ej2
 
         Crear una Solución en Visual Studio tipo Winform C# que permita: 
             ++ 1.	Cargar Vendedores
-            2.	Cargar Ventas
-            3.	Crear una lista para agregar los vendedores. 
-            4.	Cargar en un combo las siguientes Zonas de venta: Mar del Plata, Balcarce, Miramar y Necochea. 
-            5.	Para mostrar los totales por zona se debe seleccionar del combo una zona y mostrar las ventas totales de dicha zona y la comisión total. 
-            a.	Cuando se selecciona un Vendedor mostrar en datagridview las ventas
-            b.	Mostrar en ListView las comisiones y en un label la suma
-            6.	Eliminar Ventas
-            7.	Eliminar Vendedores
-            8.	Mostrar el Total de Ventas
+            ++ 2.	Cargar Ventas
+            ++ 3.	Crear una lista para agregar los vendedores. 
+            ++ 4.	Cargar en un combo las siguientes Zonas de venta: Mar del Plata, Balcarce, Miramar y Necochea. 
+            ++ 5.	Para mostrar los totales por zona se debe seleccionar del combo una zona y mostrar las ventas totales de dicha zona y la comisión total. 
+                ++ a.	Cuando se selecciona un Vendedor mostrar en datagridview las ventas
+                b.	Mostrar en ListView las comisiones y en un label la suma
+            ++ 6.	Eliminar Ventas
+            ++ 7.	Eliminar Vendedores
+            ++ 8.	Mostrar el Total de Ventas
             9.	Persistir en un archivo los datos del Vendedor
             10.	Persistir en un archivo los datos de las ventas
-            11.	Diagrama de Clases participantes
+            ++ 11.	Diagrama de Clases participantes
+
+        ## No esta aca, pero falta lo de buscar vendedor y esas boludeces xd.
 
         Agregar los métodos que crea necesarios
   

@@ -12,10 +12,6 @@ namespace POO_Parcial1_Ej2
         public string PrimerNombre { get; set; }
         public string SegundoNombre { get; set; }
 
-        public Nombre()
-        { 
-        
-        }
         ~Nombre()
         {
             Apellido = "";

@@ -28,11 +28,11 @@ namespace POO_Parcial1_Ej2
             if (TotalVenta < 50000)
                 return 0;
             if (TotalVenta > 50000 && TotalVenta < 75000)
-                return TotalVenta += (TotalVenta * 15) / 100; //Creo que era asi cuenta, validar si no la cague.
+                return (TotalVenta * 15) / 100; //Creo que era asi cuenta, validar si no la cague.
             if (TotalVenta > 75000 && TotalVenta < 100000)
-                return TotalVenta += (TotalVenta * 20) / 100;
-            if (TotalVenta > 100000)
-                return TotalVenta += (TotalVenta * 30) / 100; 
+                return (TotalVenta * 20) / 100;
+            if (TotalVenta >= 100000)
+                return (TotalVenta * 30) / 100; 
             return 0;
         }
 
@@ -44,11 +44,8 @@ namespace POO_Parcial1_Ej2
             Comision = 0;
         }
 
-        public Vendedor(Nombre _Nombres, string _ZonaDeVenta, int _TotalVendido, int _Comision)
+        public Vendedor(string _ZonaDeVenta, int _TotalVendido, int _Comision)
         {
-            Nombres.Apellido = _Nombres.Apellido;
-            Nombres.PrimerNombre = _Nombres.PrimerNombre;
-            Nombres.SegundoNombre = _Nombres.SegundoNombre;
             ZonaDeVenta = _ZonaDeVenta;
             TotalVendido = _TotalVendido;
             Comision = _Comision;
