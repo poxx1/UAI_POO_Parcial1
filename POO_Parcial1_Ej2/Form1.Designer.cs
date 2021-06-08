@@ -59,6 +59,12 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -202,15 +208,15 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 252);
+            this.dataGridView1.Location = new System.Drawing.Point(268, 120);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(273, 150);
             this.dataGridView1.TabIndex = 17;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(258, 236);
+            this.label9.Location = new System.Drawing.Point(139, 91);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 13);
             this.label9.TabIndex = 18;
@@ -219,9 +225,9 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(258, 252);
+            this.listView1.Location = new System.Drawing.Point(118, 196);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
+            this.listView1.Size = new System.Drawing.Size(144, 74);
             this.listView1.TabIndex = 19;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -248,7 +254,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(258, 352);
+            this.label10.Location = new System.Drawing.Point(139, 110);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(81, 13);
             this.label10.TabIndex = 22;
@@ -256,52 +262,56 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(385, 403);
+            this.button5.Location = new System.Drawing.Point(430, 403);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 20);
+            this.button5.Size = new System.Drawing.Size(48, 20);
             this.button5.TabIndex = 23;
             this.button5.Text = "abrir";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(466, 403);
+            this.button6.Location = new System.Drawing.Point(484, 402);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 20);
+            this.button6.Size = new System.Drawing.Size(57, 20);
             this.button6.TabIndex = 24;
             this.button6.Text = "guardar";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(385, 426);
+            this.button7.Location = new System.Drawing.Point(430, 426);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 20);
+            this.button7.Size = new System.Drawing.Size(48, 20);
             this.button7.TabIndex = 25;
             this.button7.Text = "abrir";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(466, 426);
+            this.button8.Location = new System.Drawing.Point(484, 426);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 20);
+            this.button8.Size = new System.Drawing.Size(57, 20);
             this.button8.TabIndex = 26;
             this.button8.Text = "guardar";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(12, 403);
+            this.textBox7.Location = new System.Drawing.Point(48, 403);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(367, 20);
+            this.textBox7.Size = new System.Drawing.Size(376, 20);
             this.textBox7.TabIndex = 27;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(12, 426);
+            this.textBox8.Location = new System.Drawing.Point(72, 426);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(367, 20);
+            this.textBox8.Size = new System.Drawing.Size(352, 20);
             this.textBox8.TabIndex = 28;
             // 
             // listBox1
@@ -322,6 +332,44 @@
             this.label11.TabIndex = 31;
             this.label11.Text = "Vendedores";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(5, 276);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(265, 121);
+            this.richTextBox1.TabIndex = 32;
+            this.richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(276, 276);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(265, 121);
+            this.richTextBox2.TabIndex = 33;
+            this.richTextBox2.Text = "";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(2, 406);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 13);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Ventas";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(2, 430);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 13);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Vendedores";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +377,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(544, 450);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox8);
@@ -403,6 +455,12 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

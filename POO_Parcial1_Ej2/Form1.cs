@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,8 @@ namespace POO_Parcial1_Ej2
                 totalVentas += venta.TotalVenta; 
             }
             label10.Text = "Total de las ventas: " + totalVentas;
+
+            richTextBox1.Text += vendedor.Nombres.Apellido + ";" + venta.ZonaVenta + ";" + venta.TotalVenta + ";" + venta.Comision + "\n";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,6 +72,9 @@ namespace POO_Parcial1_Ej2
             {
                 c.Value = ((Nombre)c.Value).Apellido;
             };
+
+            richTextBox2.Text += vendedor.Nombres.Apellido + ";" + vendedor.Nombres.PrimerNombre + ";" + vendedor.Nombres.SegundoNombre
+                + ";" + vendedor.ZonaDeVenta + "\n"; // Le agrego estos datos? + ";" + vendedor.TotalVendido + ";" + vendedor.Comision;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -126,6 +132,62 @@ namespace POO_Parcial1_Ej2
             listaVendedor.Remove((Vendedor)listBox1.SelectedItem);
             listBox1.DataSource = null;
             listBox1.DataSource = listaVendedor;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.DefaultExt = "csv";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox7.Text = openFileDialog1.FileName;
+                var sr = new StreamReader(textBox7.Text);
+
+                richTextBox1.Text = sr.ReadToEnd();
+                sr.Close();
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.DefaultExt = "csv";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox8.Text = openFileDialog1.FileName;
+                var sr = new StreamReader(textBox8.Text);
+
+                richTextBox2.Text = sr.ReadToEnd();
+                sr.Close();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.DefaultExt = "csv";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox7.Text = saveFileDialog1.FileName;
+                var sw = new StreamWriter(textBox7.Text);
+
+                sw.Write(richTextBox1.Text);
+                sw.Close();
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.DefaultExt = "csv";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox7.Text = saveFileDialog1.FileName;
+                var sw = new StreamWriter(textBox8.Text);
+
+                sw.Write(richTextBox2.Text);
+                sw.Close();
+            }
         }
     }
 }
