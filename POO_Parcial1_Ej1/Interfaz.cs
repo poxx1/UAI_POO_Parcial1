@@ -10,7 +10,7 @@ namespace POO_Parcial1_Ej1
         #region Propiedades
 
         public List<Libro> listaLibros = new List<Libro>();
-        public List<Capitulos> listaCapitulos;
+        public List<Capitulos> listaCapitulos = new List<Capitulos>();
 
         public Libro libro;
         public Capitulos capitulo;
@@ -32,14 +32,16 @@ namespace POO_Parcial1_Ej1
         #region Metodos creados
         private void button1_Click(object sender, EventArgs e)
         {
-            libro = new Libro(textBox1.Text, textBox2.Text, textBox3.Text, listaCapitulos, Int32.Parse(textBox4.Text));
-            List<int> listaCapitulosActual = new List<int>();
             List<Capitulos> listaAuxiliar = new List<Capitulos>();
 
-            listaCapitulos = new List<Capitulos>();
+            foreach (var item in listaCapitulos)
+            {
+                listaAuxiliar.Add(item);
+            }
 
-            listaAuxiliar = listaCapitulos;
-
+            libro = new Libro(textBox1.Text, textBox2.Text, textBox3.Text, listaAuxiliar, Int32.Parse(textBox4.Text));
+            List<int> listaCapitulosActual = new List<int>();
+        
             foreach (var capitulo in listaAuxiliar)
             {
                 listaCapitulosActual.Add(capitulo.ID);
@@ -53,7 +55,7 @@ namespace POO_Parcial1_Ej1
             dataGridView1.DataSource = listaLibros;
 
             dataGridView2.DataSource = null;
-
+            listaCapitulos.Clear();
         }
 
         private void button2_Click(object sender, EventArgs e)
