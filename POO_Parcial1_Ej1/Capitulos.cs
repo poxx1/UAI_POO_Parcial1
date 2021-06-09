@@ -6,7 +6,8 @@ namespace POO_Parcial1_Ej1
     {
         public int Numero { get; set; }
         public string Nombre { get; set; }
-
+        public int ID { get; set; }
+        
         #region Constructor/Destructor
 
         public Capitulos()

@@ -40,9 +40,9 @@
             ++ 3.	Almacene en una Lista los libros agregados
             ++ 4.	Asiente en documento los Libros cargados para poder recuperarlos
             ++ 5.	Muestre en un Control Los Libros (DatagridView o ListView)
-                ~~ a.	Muestre en un control los capítulos pertenecientes a el libro elegido. Ídem anterior >> Quedan las preguntas al profe
+                ~~ a.	Muestre en un control los capítulos pertenecientes a el libro elegido. Ídem anterior 
             ++ 6.	Un Botón para cada Acción
-            ~~ 7.	Recupere del archivo los libros cargados >> Quedan las preguntas al profe
+            ~~ 7.	Recupere del archivo los libros cargados 
             ++ 8.	Cuando seleccione un Autor 
                ++ a.	Mostrar los libros creados
             ++ 9.	Diagrama de Clases participantes

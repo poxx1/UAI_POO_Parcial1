@@ -10,11 +10,12 @@ namespace POO_Parcial1_Ej1
         #region Propiedades
 
         public List<Libro> listaLibros = new List<Libro>();
-        public List<Capitulos> listaCapitulos = new List<Capitulos>();
+        public List<Capitulos> listaCapitulos;
 
         public Libro libro;
         public Capitulos capitulo;
 
+        public int counter = 1;
         #endregion
 
         #region Metodos de la interfaz
@@ -32,17 +33,27 @@ namespace POO_Parcial1_Ej1
         private void button1_Click(object sender, EventArgs e)
         {
             libro = new Libro(textBox1.Text, textBox2.Text, textBox3.Text, listaCapitulos, Int32.Parse(textBox4.Text));
+            List<int> listaCapitulosActual = new List<int>();
+            List<Capitulos> listaAuxiliar = new List<Capitulos>();
 
-            //libro.Titulo = textBox1.Text;
-            //libro.Autor = textBox2.Text;
-            //libro.Editorial = textBox3.Text;
-            //libro.Cantidad_Hojas = Int32.Parse(textBox4.Text);
-            //listaCapitulos = libro.AgregaCapitulo(listaCapitulos, capitulo);
+            listaCapitulos = new List<Capitulos>();
 
+            listaAuxiliar = listaCapitulos;
+
+            foreach (var capitulo in listaAuxiliar)
+            {
+                listaCapitulosActual.Add(capitulo.ID);
+            }
+
+            libro.listaCapitulos = listaCapitulosActual;
+            
             listaLibros.Add(libro);
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = listaLibros;
+
+            dataGridView2.DataSource = null;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -51,6 +62,9 @@ namespace POO_Parcial1_Ej1
 
             capitulo.Nombre = textBox5.Text;
             capitulo.Numero = Int32.Parse(textBox6.Text);
+            capitulo.ID = counter;
+
+            counter++;
 
             listaCapitulos.Add(capitulo);
 
@@ -59,7 +73,11 @@ namespace POO_Parcial1_Ej1
             comboBox1.DisplayMember = "Nombre";
 
             dataGridView2.DataSource = null;
-            dataGridView2.DataSource = listaCapitulos;
+            int aux = 0;
+            if(aux != listaCapitulos.Count)
+            { 
+                dataGridView2.DataSource = listaCapitulos;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -120,7 +138,11 @@ namespace POO_Parcial1_Ej1
         {
             string nombreCapitulo = textBox5.Text;
 
-            capitulo = capitulo.BuscaCapítulo(listaCapitulos, nombreCapitulo);
+            foreach (var libroz in listaLibros)
+            {
+                capitulo = capitulo.BuscaCapítulo(libroz.Capitulos, nombreCapitulo);
+            }
+
             if (capitulo != null)
                 MessageBox.Show("Se encontro el capitulo deseado", "Sistema Bibliotecario", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
@@ -166,6 +188,12 @@ namespace POO_Parcial1_Ej1
                     listaLibrosAutor.Add(libro);
                 }
             }
+
+            foreach (var libro in listaLibrosAutor)
+            {
+                MessageBox.Show("Los libros del autor son los siguientes: " + libro.Titulo, "Sistema Bibliotecario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             if (listaLibrosAutor.Count == 0)
                 MessageBox.Show("No se encontraron libros del autor: " + textBox2.Text, "Sistema Bibliotecario", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

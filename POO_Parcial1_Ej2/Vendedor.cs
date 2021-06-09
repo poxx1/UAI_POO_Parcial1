@@ -6,6 +6,7 @@
         public string ZonaDeVenta { get; set; }
         public int TotalVendido { get; set; }
         public int Comision { get; set; }
+        public bool Estado { get; set; }
 
         public Vendedor BuscaVendedor() //Devuelve el Vendedor buscado con todos sus datos
         {
@@ -43,6 +44,7 @@
             ZonaDeVenta = _ZonaDeVenta;
             TotalVendido = _TotalVendido;
             Comision = _Comision;
+            Estado = true;
         }
     }
 }
