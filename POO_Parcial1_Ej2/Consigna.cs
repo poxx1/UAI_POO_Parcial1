@@ -34,7 +34,7 @@
             ++ CONSTRUCTOR SOBRECARGADO
             ++ DESTRUCTOR
 
-        >> Aunque no diga de la clase venta, diria que tengo que crearla si o si. ~~ Pregunta pal profe
+        >> Aunque no diga de la clase venta, diria que tengo que crearla si o si. 
 
         Detalle de cálculo de Comisión:
             Si totalVendido < $ 50.000 , la comisión es cero. 
@@ -49,15 +49,13 @@
             ++ 4.	Cargar en un combo las siguientes Zonas de venta: Mar del Plata, Balcarce, Miramar y Necochea. 
             ++ 5.	Para mostrar los totales por zona se debe seleccionar del combo una zona y mostrar las ventas totales de dicha zona y la comisión total. 
                 ++ a.	Cuando se selecciona un Vendedor mostrar en datagridview las ventas
-                b.	Mostrar en ListView las comisiones y en un label la suma
+                ++ b.	Mostrar en ListView las comisiones y en un label la suma
             ++ 6.	Eliminar Ventas
             ++ 7.	Eliminar Vendedores
             ++ 8.	Mostrar el Total de Ventas
-            9.	Persistir en un archivo los datos del Vendedor
-            10.	Persistir en un archivo los datos de las ventas
+            ++ 9.	Persistir en un archivo los datos del Vendedor
+            ++ 10.	Persistir en un archivo los datos de las ventas
             ++ 11.	Diagrama de Clases participantes
-
-        ## No esta aca, pero falta lo de buscar vendedor y esas boludeces xd.
 
         Agregar los métodos que crea necesarios
   

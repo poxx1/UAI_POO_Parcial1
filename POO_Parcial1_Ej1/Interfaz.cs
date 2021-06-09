@@ -169,5 +169,50 @@ namespace POO_Parcial1_Ej1
             if (listaLibrosAutor.Count == 0)
                 MessageBox.Show("No se encontraron libros del autor: " + textBox2.Text, "Sistema Bibliotecario", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.DefaultExt = "csv";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox8.Text = openFileDialog1.FileName;
+                var sr = new StreamReader(textBox8.Text);
+
+                richTextBox2.Text = sr.ReadToEnd();
+                sr.Close();
+            }
+
+            //Asigno a mi lista de libros los libros que fui leyendo
+            var arrayLibros = richTextBox1.Text.Split('\n');
+            listaLibros.Clear();
+
+            foreach (var linea in arrayLibros)
+            {
+                var arrayLineas = linea.Split(';');
+
+                List<Capitulos> listaVacia = new List<Capitulos>();
+
+                libro = new Libro(arrayLineas[0], arrayLineas[1], arrayLineas[2], listaVacia, Int32.Parse(arrayLineas[3]));
+
+                listaLibros.Add(libro);
+            }
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listaLibros;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.DefaultExt = "csv";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox8.Text = saveFileDialog1.FileName;
+                var sw = new StreamWriter(textBox8.Text);
+
+                sw.Write(richTextBox2.Text);
+                sw.Close();
+            }
+        }
     }
 }

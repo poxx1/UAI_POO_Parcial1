@@ -10,6 +10,7 @@ namespace POO_Parcial1_Ej2
         public List<Vendedor> listaVendedor = new List<Vendedor>();
         public List<Nombre> listaNombres = new List<Nombre>();
         public List<Ventas> listaVentas = new List<Ventas>();
+        public List<string> listaApellidoVendedor = new List<string>();
 
         private Nombre nombre;
         private Ventas venta;
@@ -23,7 +24,15 @@ namespace POO_Parcial1_Ej2
         private void button2_Click(object sender, EventArgs e)
         {
             venta = new Ventas();
-            var vendedorActual = (Vendedor)listBox1.SelectedItem;
+            Vendedor vendedorActual = new Vendedor("",0,0);
+
+            foreach (var item in listaVendedor)
+            {
+                if ((string)listBox1.SelectedItem == item.Nombres.Apellido)
+                {
+                    vendedorActual = item;     
+                }
+            }
 
             venta.TotalVenta = Int32.Parse(textBox5.Text);
             venta.Comision = vendedorActual.CálculaComisión(venta.TotalVenta);
@@ -46,10 +55,22 @@ namespace POO_Parcial1_Ej2
             }
             label10.Text = "Total de las ventas: " + totalVentas;
 
-            richTextBox1.Text += vendedor.Nombres.Apellido + ";" + venta.ZonaVenta + ";" + venta.TotalVenta + ";" + venta.Comision + "\n";
+            richTextBox1.Text += vendedorActual.Nombres.Apellido + ";" + venta.ZonaVenta + ";" + venta.TotalVenta + ";" + venta.Comision + "\n";
+
+            int comisiones = 0;
+            listView1.Clear();
+
+            foreach (var venta1 in listaVentas)
+            {
+                comisiones += venta1.Comision;
+                listView1.Items.Add(venta1.Comision.ToString());
+            }
+
+            label14.Text = comisiones.ToString();
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs x)
         {
             nombre = new Nombre(textBox1.Text, textBox2.Text, textBox3.Text);
             vendedor = new Vendedor(comboBox1.Text, 0, 0); //Int32.Parse(textBox5.Text), Int32.Parse(textBox6.Text));
@@ -58,14 +79,11 @@ namespace POO_Parcial1_Ej2
             listaVendedor.Add(vendedor);
             listaNombres.Add(nombre);
 
-            listBox1.DataSource = null;
-            listBox1.DataSource = listaVendedor;
+            listaApellidoVendedor.Add(nombre.Apellido);
 
-            listBox1.DisplayMember = "Nombres";
-            listBox1.Format += (s, c) =>
-            {
-                c.Value = ((Nombre)c.Value).Apellido;
-            };
+            listBox1.DataSource = null;
+            listBox1.DataSource = listaApellidoVendedor;
+
 
             richTextBox2.Text += vendedor.Nombres.Apellido + ";" + vendedor.Nombres.PrimerNombre + ";" + vendedor.Nombres.SegundoNombre
                 + ";" + vendedor.ZonaDeVenta + "\n"; // Le agrego estos datos? + ";" + vendedor.TotalVendido + ";" + vendedor.Comision;
@@ -123,9 +141,18 @@ namespace POO_Parcial1_Ej2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            listaVendedor.Remove((Vendedor)listBox1.SelectedItem);
+            foreach(var actualVendedor in listaVendedor)
+            { 
+                if ((string)listBox1.SelectedItem == actualVendedor.Nombres.Apellido)
+                {
+                    listaVendedor.Remove(actualVendedor);
+                    listaApellidoVendedor.Remove(actualVendedor.Nombres.Apellido);
+                    break;
+                }
+            }
+
             listBox1.DataSource = null;
-            listBox1.DataSource = listaVendedor;
+            listBox1.DataSource = listaApellidoVendedor;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -155,7 +182,6 @@ namespace POO_Parcial1_Ej2
                 sr.Close();
             }
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             saveFileDialog1.DefaultExt = "csv";
@@ -181,6 +207,26 @@ namespace POO_Parcial1_Ej2
 
                 sw.Write(richTextBox2.Text);
                 sw.Close();
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            foreach (var item in listaVendedor)
+            {
+                if ((string)listBox1.SelectedItem == item.Nombres.Apellido)
+                {
+                    var listaVentasData = new List<Ventas>();
+                    foreach (var venta in listaVentas)
+                    {
+                        if (venta.vendedor == item)
+                        {
+                            listaVentasData.Add(venta);
+                        }
+                    }
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = listaVentasData;
+                }
             }
         }
     }

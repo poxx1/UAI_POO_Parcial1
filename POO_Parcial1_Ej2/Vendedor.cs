@@ -1,8 +1,8 @@
 ﻿namespace POO_Parcial1_Ej2
 {
-    public class Vendedor//:Nombre // Uso herencia, o uso el type Nombre?
-    {
-        public Nombre Nombres { get; set; } // >> Pregunta de la herencia
+    public class Vendedor 
+    { 
+        public Nombre Nombres { get; set; } 
         public string ZonaDeVenta { get; set; }
         public int TotalVendido { get; set; }
         public int Comision { get; set; }

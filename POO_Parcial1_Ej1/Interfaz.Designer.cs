@@ -58,6 +58,10 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -231,9 +235,9 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(409, 402);
+            this.button3.Location = new System.Drawing.Point(90, 394);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 36);
+            this.button3.Size = new System.Drawing.Size(79, 21);
             this.button3.TabIndex = 19;
             this.button3.Text = "ABRIR";
             this.button3.UseVisualStyleBackColor = false;
@@ -243,7 +247,7 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(6, 418);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(397, 20);
+            this.textBox7.Size = new System.Drawing.Size(244, 20);
             this.textBox7.TabIndex = 20;
             // 
             // openFileDialog1
@@ -254,7 +258,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(6, 444);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(567, 221);
+            this.richTextBox1.Size = new System.Drawing.Size(290, 221);
             this.richTextBox1.TabIndex = 21;
             this.richTextBox1.Text = "";
             // 
@@ -263,9 +267,9 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(494, 402);
+            this.button4.Location = new System.Drawing.Point(175, 394);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(79, 36);
+            this.button4.Size = new System.Drawing.Size(79, 21);
             this.button4.TabIndex = 22;
             this.button4.Text = "GUARDAR";
             this.button4.UseVisualStyleBackColor = false;
@@ -323,6 +327,47 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(302, 444);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(271, 221);
+            this.richTextBox2.TabIndex = 27;
+            this.richTextBox2.Text = "";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(329, 418);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(244, 20);
+            this.textBox8.TabIndex = 28;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Location = new System.Drawing.Point(494, 394);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(79, 21);
+            this.button9.TabIndex = 30;
+            this.button9.Text = "GUARDAR";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.ForeColor = System.Drawing.Color.White;
+            this.button10.Location = new System.Drawing.Point(409, 394);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(79, 21);
+            this.button10.TabIndex = 29;
+            this.button10.Text = "ABRIR";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Interfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,6 +375,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(576, 668);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -398,6 +447,10 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
 
