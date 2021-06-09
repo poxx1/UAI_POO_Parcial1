@@ -14,4 +14,9 @@ Ejercicio 2. Quedo casi terminado, hay que arreglar algunos bugs y preguntar:
   1. Se puede agregar la clase Ventas? >> La re necesito
   2. Hay que leer las ventas y vendedores del csv? o solo guardamos?
   3. Que onda los metodos de buscar que no estan como puntos del examen?
-  4. 
+
+08/06/2021 >>
+ Ejercicio 1. Nos faltan agregar las validaciones y reparar cuando borramos el contenido
+  de la lista de Capitulos.
+Ejercicio 2. Nos faltan agregar las validaciones y modificar la eliminacion de vendedores. Usamos
+  la propiedad Estado en false.
