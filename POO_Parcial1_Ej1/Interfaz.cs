@@ -84,8 +84,6 @@ namespace POO_Parcial1_Ej1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //C:\Users\Poxi\source\repos\POO_Parcial1_Ej1\POO_Parcial1_Ej1\Documentos
-
             //Abro el documento y cargo el richtextbox
             openFileDialog1.DefaultExt = "csv";
 
@@ -171,12 +169,21 @@ namespace POO_Parcial1_Ej1
 
         private void button7_Click(object sender, EventArgs e)
         {
+            richTextBox1.Text = "";
+            richTextBox2.Text = "";
+            
             string lineaLibro = "";
 
             foreach (var libro in listaLibros)
             {
-                lineaLibro = libro.Titulo + ";" + libro.Autor + ";" + libro.Editorial + ";" + libro.Cantidad_Hojas + ";" + libro.Capitulos;
-                richTextBox1.Text += Environment.NewLine + lineaLibro;
+                lineaLibro = libro.Titulo + ";" + libro.Autor + ";" + libro.Editorial + ";" + libro.Cantidad_Hojas + ";";
+                richTextBox1.Text += lineaLibro + Environment.NewLine ;
+
+                foreach (var capitulo in libro.Capitulos)
+                {
+                    var lineaCapitulo = capitulo.ID + ";" + capitulo.Numero + ";" + capitulo.Nombre;
+                    richTextBox2.Text += lineaCapitulo + Environment.NewLine;
+                }
             }
         }
 
