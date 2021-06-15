@@ -42,7 +42,7 @@
             ++ 5.	Muestre en un Control Los Libros (DatagridView o ListView)
                 ~~ a.	Muestre en un control los capítulos pertenecientes a el libro elegido. Ídem anterior 
             ++ 6.	Un Botón para cada Acción
-            ~~ 7.	Recupere del archivo los libros cargados 
+            ++ 7.	Recupere del archivo los libros cargados 
             ++ 8.	Cuando seleccione un Autor 
                ++ a.	Mostrar los libros creados
             ++ 9.	Diagrama de Clases participantes

@@ -16,6 +16,7 @@ namespace POO_Parcial1_Ej1
         public Capitulos capitulo;
 
         public int counter = 1;
+        public int counterLectura = 1;
         #endregion
 
         #region Metodos de la interfaz
@@ -39,7 +40,7 @@ namespace POO_Parcial1_Ej1
                 listaAuxiliar.Add(item);
             }
 
-            libro = new Libro(textBox1.Text, textBox2.Text, textBox3.Text, listaAuxiliar, Int32.Parse(textBox4.Text));
+            libro = new Libro(textBox1.Text, textBox2.Text, textBox3.Text, listaAuxiliar, Int32.Parse(textBox4.Text),counter);
             List<int> listaCapitulosActual = new List<int>();
         
             foreach (var capitulo in listaAuxiliar)
@@ -56,6 +57,8 @@ namespace POO_Parcial1_Ej1
 
             dataGridView2.DataSource = null;
             listaCapitulos.Clear();
+
+            counter++;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -65,8 +68,6 @@ namespace POO_Parcial1_Ej1
             capitulo.Nombre = textBox5.Text;
             capitulo.Numero = Int32.Parse(textBox6.Text);
             capitulo.ID = counter;
-
-            counter++;
 
             listaCapitulos.Add(capitulo);
 
@@ -103,20 +104,22 @@ namespace POO_Parcial1_Ej1
             foreach (var linea in arrayLibros)
             {
                 var arrayLineas = linea.Split(';');
-                //libro.Titulo = arrayLineas[0];
-                //libro.Autor = arrayLineas[1];
-                //libro.Editorial = arrayLineas[2];
-                //libro.Cantidad_Hojas = Int32.Parse(arrayLineas[3]);
-                //Los capitulos del libro los guardaria en otro .csv. Linda pregunta para el profe.
 
-                List<Capitulos> listaVacia = new List<Capitulos>();
+                if (arrayLineas[0] != "")
+                {
+                    List<Capitulos> listaVacia = new List<Capitulos>();
 
-                libro = new Libro(arrayLineas[0], arrayLineas[1], arrayLineas[2], listaVacia, Int32.Parse(arrayLineas[3]));
+                    libro = new Libro(arrayLineas[0], arrayLineas[1], arrayLineas[2], listaVacia, Int32.Parse(arrayLineas[3]), Int32.Parse(arrayLineas[4]));
 
-                listaLibros.Add(libro);
+                    listaLibros.Add(libro);
+
+                }
             }
+            
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = listaLibros;
+
+            counterLectura = 1;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -138,10 +141,24 @@ namespace POO_Parcial1_Ej1
         {
             string nombreCapitulo = textBox5.Text;
 
+            capitulo = new Capitulos();
+
             foreach (var libroz in listaLibros)
             {
-                capitulo = capitulo.BuscaCapítulo(libroz.Capitulos, nombreCapitulo);
+                try
+                {
+                    if(capitulo.BuscaCapítulo(libroz.Capitulos, nombreCapitulo)!= null)
+                    {
+                        capitulo = capitulo.BuscaCapítulo(libroz.Capitulos, nombreCapitulo);
+                    }
+                }
+                catch(Exception ex)
+                { 
+                    //Ex Vacia
+                }
             }
+
+            //capitulo = x;
 
             if (capitulo != null)
                 MessageBox.Show("Se encontro el capitulo deseado", "Sistema Bibliotecario", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -220,20 +237,59 @@ namespace POO_Parcial1_Ej1
                 sr.Close();
             }
 
+            int counterCapitulos = 0;
+
             //Asigno a mi lista de libros los libros que fui leyendo
-            var arrayLibros = richTextBox1.Text.Split('\n');
+            var arrayCapitulos = richTextBox2.Text.Split('\n');
+
+            counterCapitulos = arrayCapitulos.Length - 1;
+
+            //listaLibros.Clear(); >> No la borro mas, porque le asingo los libros ahora
+
+            List<Libro> listaAuxiliarLibros = new List<Libro>();
+
+            foreach (var libros in listaLibros)
+            {
+                listaAuxiliarLibros.Add(libros);
+            }
+
             listaLibros.Clear();
 
-            foreach (var linea in arrayLibros)
+            foreach (var libro in listaAuxiliarLibros)
             {
-                var arrayLineas = linea.Split(';');
+                //var arrayLineas = arrayCapitulos.Split(';');
 
                 List<Capitulos> listaVacia = new List<Capitulos>();
 
-                libro = new Libro(arrayLineas[0], arrayLineas[1], arrayLineas[2], listaVacia, Int32.Parse(arrayLineas[3]));
+                foreach (var lineaCapitulo in arrayCapitulos)
+                {
+                    var capituloActual = lineaCapitulo.Split(';');
 
-                listaLibros.Add(libro);
+                    var capitulo = new Capitulos();
+
+                    if (capituloActual[0] != "")
+                    {
+                        if (libro.id == Int32.Parse(capituloActual[0]))
+                        {
+                            capitulo.ID = Int32.Parse(capituloActual[0]);
+                            capitulo.Numero = Int32.Parse(capituloActual[1]);
+                            capitulo.Nombre = capituloActual[2];
+                            listaVacia.Add(capitulo);
+                        }
+
+                    }
+                }
+
+                var libroNuevo = new Libro(libro.Titulo, libro.Autor, libro.Editorial, listaVacia, libro.Cantidad_Hojas, libro.id);
+
+                listaLibros.Add(libroNuevo);
             }
+
+            //foreach(var libro in listaAuxiliarLibros)
+            //{ 
+            //    listaLibros.Add(libro); 
+            //}
+
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = listaLibros;
         }

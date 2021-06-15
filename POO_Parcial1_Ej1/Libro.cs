@@ -11,14 +11,16 @@ namespace POO_Parcial1_Ej1
         public readonly List<Capitulos> Capitulos;
         public int Cantidad_Hojas { get; set; }
         public List<int> listaCapitulos { get; set; }
+        public int id { get; set; }
 
-        public Libro(string _Titulo, string _Autor, string _Editorial, List<Capitulos> _capitulos, int _Cantidad_Hojas) 
+        public Libro(string _Titulo, string _Autor, string _Editorial, List<Capitulos> _capitulos, int _Cantidad_Hojas, int ide) 
         {
             Titulo = _Titulo;
             Autor = _Autor;
             Editorial = _Editorial;
             Cantidad_Hojas = _Cantidad_Hojas;
             Capitulos = _capitulos;
+            id = ide;
         }
 
         public Libro() 
